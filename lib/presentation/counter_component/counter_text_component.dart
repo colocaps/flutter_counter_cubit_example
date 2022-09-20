@@ -1,5 +1,5 @@
+import 'package:core/core.dart';
 import 'package:ejemplo_cubit_clean_arch/bussines_logic/counter_cubit/counter_cubit.dart';
-import 'package:ejemplo_cubit_clean_arch/core/widgets/custom_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

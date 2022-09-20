@@ -17,9 +17,9 @@ class CustomIconButton extends StatelessWidget {
       onPressed: _onPressed,
       color: Colors.blue,
       textColor: Colors.white,
-      child: _icon,
       padding: const EdgeInsets.all(16),
       shape: const CircleBorder(),
+      child: _icon,
     );
   }
 }
