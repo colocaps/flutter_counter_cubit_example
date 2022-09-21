@@ -1,4 +1,4 @@
-import 'package:ejemplo_cubit_clean_arch/core/widgets/custom_icon_button.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 class BuildConter extends StatelessWidget {
@@ -23,7 +23,7 @@ class BuildConter extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Text(
-            'Ejemplo de Cubit para Bitlogicos',
+            'Ejemplo de Contador con Cubit',
             style: Theme.of(context).textTheme.headline5,
           ),
           const SizedBox(
