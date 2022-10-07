@@ -1,3 +1,4 @@
+import 'package:core/core.dart';
 import 'package:ejemplo_cubit_clean_arch/bussines_logic/counter_cubit/counter_cubit.dart';
 import 'package:ejemplo_cubit_clean_arch/presentation/counter_component/counter_text_component.dart';
 import 'package:ejemplo_cubit_clean_arch/presentation/widgets/build_counter.dart';
@@ -12,7 +13,8 @@ class CounterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var counterCubit = CounterCubit();
+    var counterCubit = InjectorContainer.instance.resolve<CounterCubit>();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
