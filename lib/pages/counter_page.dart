@@ -3,6 +3,7 @@ import 'package:ejemplo_cubit_clean_arch/bussines_logic/counter_cubit/counter_cu
 import 'package:ejemplo_cubit_clean_arch/presentation/counter_component/counter_text_component.dart';
 import 'package:ejemplo_cubit_clean_arch/presentation/widgets/build_counter.dart';
 import 'package:flutter/material.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 class CounterPage extends StatelessWidget {
   final String title;
@@ -19,7 +20,16 @@ class CounterPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: BuildConter(
+      floatingActionButton: CustomIconButton(
+        icon: const Icon(
+          Icons.clear_sharp,
+        ),
+        onPressed: () {
+          HydratedBloc.storage.clear();
+          counterCubit.initState();
+        },
+      ),
+      body: BuildCounter(
         counterTextComponent: CounterTextComponent(
           counterCubit: counterCubit,
         ),

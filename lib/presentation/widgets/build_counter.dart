@@ -1,12 +1,12 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
-class BuildConter extends StatelessWidget {
+class BuildCounter extends StatelessWidget {
   final Widget _counterTextComponent;
   final void Function()? _onIncrementPressed;
   final void Function()? _onDecrementPressed;
 
-  const BuildConter({
+  const BuildCounter({
     Key? key,
     required Widget counterTextComponent,
     required void Function()? onIncrementPressed,

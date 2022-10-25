@@ -24,6 +24,10 @@ Widget buildByState(
     );
   } else if (state is Warning) {
     return const BuildWarning();
+  } else if (state is Loading) {
+    return const Center(
+      child: CircularProgressIndicator(),
+    );
   }
 
   return Container();

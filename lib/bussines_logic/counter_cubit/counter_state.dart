@@ -31,4 +31,6 @@ class DecrementValue extends CounterState {
 
 class Warning extends CounterState {}
 
+class Loading extends CounterState {}
+
 class Message extends CounterState {}

@@ -1,17 +1,16 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 part 'counter_state.dart';
 
-class CounterCubit extends Cubit<CounterState> {
+class CounterCubit extends HydratedCubit<CounterState> {
   CounterCubit() : super(Initial(value: 0));
-  int value = 0;
+  late int value;
+
   Future<void> incrementValue() async {
-    value = value + 1;
+    value = value.isNaN ? 0 : value + 1;
     emit(IncrementValue(value: value));
-    if (value < 0) {
-      emit(Warning());
-    }
+
     if (value == 10) {
       emit(Message());
       emit(Initial(value: value));
@@ -19,7 +18,7 @@ class CounterCubit extends Cubit<CounterState> {
   }
 
   Future<void> decrementValue() async {
-    value = value - 1;
+    value = value.isNaN ? 0 : value - 1;
     emit(DecrementValue(value: value));
 
     if (value < 0) {
@@ -32,6 +31,25 @@ class CounterCubit extends Cubit<CounterState> {
   }
 
   Future<void> initState() async {
-    emit(Initial(value: 0));
+    value = 0;
+    emit(Initial(value: value));
+  }
+
+  @override
+  CounterState? fromJson(Map<String, dynamic> json) {
+    value = json['value'];
+    return Initial(value: json['value']);
+  }
+
+  @override
+  Map<String, dynamic>? toJson(CounterState state) {
+    if (state is Initial) {
+      return {'value': state.value};
+    } else if (state is IncrementValue) {
+      return {'value': state.value};
+    } else if (state is DecrementValue) {
+      return {'value': state.value};
+    }
+    return {'value': 0};
   }
 }
