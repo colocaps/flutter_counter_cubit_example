@@ -1,16 +1,15 @@
 # ejemplo_cubit_clean_arch
 
-A new Flutter project.
+Este es un ejemplo de un contador con Bloc como state manager y Clean architecture.
 
-## Getting Started
+## Primeros pasos
 
-This project is a starting point for a Flutter application.
+1 - Primero, se debe ejecutar el comando por consla 'flutter pub get'
 
-A few resources to get you started if this is your first Flutter project:
+2 - Cuando se termine de ejecutar el proceso, ya se podra levantar la app.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Libreria Core
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Como se puede apreciar , la carpeta core, es un proyecto aparte de flutter, o mejor dicho, libreria
+creada para separar componentes o lo que se pueda usar globalmente.
+Y como se puede ver en el archivo pubspec se importa como libreria para poder usar todas sus clases y los atributos que necesitemos.
